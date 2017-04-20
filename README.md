@@ -20,3 +20,7 @@ If you are cconnected directly to the robot skip this step.
 Copy the `main.go` file to the robot.
 
 	scp ./main.go pi@<robot-ip-address>:~/robot/src/github.com/sobratoftc/line-follower-one/main.go
+
+## Setup Wifi Direct
+
+http://www.raspberryconnect.com/network/item/315-rpi3-auto-wifi-hotspot-if-no-internet
