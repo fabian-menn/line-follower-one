@@ -14,3 +14,9 @@ If you are cconnected directly to the robot skip this step.
 	cd ~/robot/src/github.com/sobratoftc/line-follower-one/
 	go install
 	line-follower-one
+
+## Copy the Code to the Robot
+
+Copy the `main.go` file to the robot.
+
+	scp ./main.go pi@<robot-ip-address>:~/robot/src/github.com/sobratoftc/line-follower-one/main.go

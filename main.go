@@ -28,8 +28,19 @@ func main() {
 	// Create a new instance of an IRSensor for the right of the line.
 	var lineSensorRight = robot.NewIRSensor(11)
 
+	// Create a new instance of a ToggleSwitch to stop and start the robot.
+	var runSwitch = robot.NewToggleSwitch(7)
+
 	// Start a loop that will run endlessly.
 	for {
+		// Don't run if the main switch is off.
+		if runSwitch.Get() > 0 {
+			// If the switch is off then wait one second and check again.
+			motorRight.Stop()
+			motorLeft.Stop()
+			time.Sleep(time.Second)
+			continue
+		}
 		// This will make the robot move in a straight line.
 		motorLeft.Set(0.6)
 		motorRight.Set(0.6)
